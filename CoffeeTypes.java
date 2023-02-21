@@ -9,8 +9,6 @@ public enum CoffeeTypes {
     int milk;
     int beans;
     int price;
-    //int totalCups;
-
 
     CoffeeTypes(int water, int beans, int price) {
         this.water = water;
@@ -19,14 +17,9 @@ public enum CoffeeTypes {
     }
 
     CoffeeTypes(int water, int milk, int beans, int price) {
-        // maybe I can use super() or this() in the constructor instead of 4 lines
-        // try after running
-        this.water = water;
+        this(water, beans, price);
         this.milk = milk;
-        this.beans = beans;
-        this.price = price;
     }
-
 
     public int getWater() {
         return water;
