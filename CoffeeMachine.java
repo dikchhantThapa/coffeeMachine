@@ -1,3 +1,4 @@
+/*
 package machine;
 
 import java.util.Scanner;
@@ -111,5 +112,133 @@ public class CoffeeMachine {
         }
 
     }
+
+}
+*/
+
+
+package machine;
+
+import java.util.Locale;
+
+public class CoffeeMachine {
+    private MachineState current;
+    private int water;
+    private int milk;
+    private int beans;
+    private int cups;
+    private int money;
+
+    public CoffeeMachine(int water, int milk, int beans, int cups, int money) {
+        this.water = water;
+        this.milk = milk;
+        this.beans = beans;
+        this.cups = cups;
+        this.money = money;
+        menu();
+    }
+
+    public void menu() {
+        current = MachineState.MENU;
+        System.out.println("\nWrite action (buy, fill, take, remaining, exit): ");
+    }
+
+    public void inputHandler(String input) {
+        switch (current) {
+            case MENU:
+                action(input);
+                break;
+            case FILLINGWATER:
+                fillingWater(input);
+                break;
+            case
+        }
+    }
+
+    public void action(String input) {
+        switch (input.toLowerCase(Locale.ROOT)) {
+            case "buy":
+                buy();
+                break;
+            case "fill":
+                current = MachineState.FILLINGWATER;
+            case "take":
+                take();
+                break;
+
+
+        }
+    }
+
+    public void fillingWater(String input) {
+        System.out.println("Write how many ml of water you want to add: ");
+        water += Integer.parseInt(input);
+        current = MachineState.FILLINGMILK;
+    }
+
+    public void fillingMilk(String input) {
+        System.out.println("Write how many ml of milk you want to add:");
+
+    }
+
+
+    public void take() {
+        System.out.println("I gave you $" + money);
+        money = 0;
+        menu();
+    }
+
+    public void buy() {
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
