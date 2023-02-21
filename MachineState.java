@@ -1,6 +1,7 @@
 package machine;
 
 public enum MachineState {
+
     MENU,
     BUYINGCOFFEE,
     FILLINGWATER,
